@@ -1,0 +1,30 @@
+:root{
+  --tinta:#1b2430; --tinta-fraca:#5a6672; --papel:#fbfaf7; --linha:#e3e0d8;
+  --destaque:#2f6f5e;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--papel); color:var(--tinta);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+.folha{max-width:44rem; margin:0 auto; padding:3rem 1.25rem 4rem}
+header.topo{border-bottom:1px solid var(--linha); margin-bottom:2.5rem; padding-bottom:1.25rem}
+.marca{font-size:1.35rem; font-weight:600; letter-spacing:-.01em; margin:0}
+.marca a{color:inherit; text-decoration:none}
+.sub{color:var(--tinta-fraca); margin:.35rem 0 0; font-size:.95rem}
+h1{font-size:1.9rem; line-height:1.25; letter-spacing:-.02em; margin:0 0 1rem}
+h2{font-size:1.15rem; margin:2.25rem 0 .6rem; letter-spacing:-.01em}
+h3{font-size:1rem; margin:1.5rem 0 .4rem}
+p,li{color:var(--tinta)}
+ul{padding-left:1.2rem}
+li{margin:.3rem 0}
+a{color:var(--destaque)}
+.nota{color:var(--tinta-fraca); font-size:.9rem}
+.caixa{border:1px solid var(--linha); border-radius:10px; padding:1rem 1.15rem; background:#fff; margin:1.5rem 0}
+footer{border-top:1px solid var(--linha); margin-top:3rem; padding-top:1.25rem; font-size:.9rem; color:var(--tinta-fraca)}
+footer a{margin-right:1rem}
+@media (prefers-color-scheme:dark){
+  :root{--tinta:#e8e6e1; --tinta-fraca:#9aa3ac; --papel:#14181d; --linha:#2b3239; --destaque:#6fc2ab}
+  .caixa{background:#1a1f25}
+}

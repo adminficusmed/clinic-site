@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de Privacidade — Clinic</title>
+<meta name="description" content="Como o Clinic acessa, usa, armazena e compartilha dados do Google, incluindo dados do Google Drive.">
+<link rel="stylesheet" href="/estilo.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>🩺</text></svg>">
+</head>
+<body>
+<div class="folha">
+
+<header class="topo">
+  <p class="marca"><a href="/">Clinic</a></p>
+  <p class="sub">Sistema editorial de uso interno</p>
+</header>
+
+<h1>Política de Privacidade</h1>
+<p class="nota">Vigente desde 17 de setembro de 2026.</p>
+
+<p>Esta política descreve como o aplicativo <strong>Clinic</strong> acessa, usa, armazena e
+compartilha informações — inclusive dados obtidos das APIs do Google. Responsável pelo
+tratamento: Igor Takakazu, contato
+<a href="mailto:drigortakakazu@gmail.com">drigortakakazu@gmail.com</a>.</p>
+
+<h2>1. Quem usa o Clinic</h2>
+<p>O Clinic é uma ferramenta interna. Só é usado por um grupo pequeno e nominal de
+profissionais que produzem conteúdo com a operação, e por quem opera o sistema. Não há
+cadastro aberto, não há versão pública e não existe usuário anônimo.</p>
+
+<h2>2. Quais dados do Google o Clinic acessa</h2>
+<p>Quando um profissional autoriza o Clinic, ele concede o escopo
+<code>https://www.googleapis.com/auth/drive</code> do Google Drive. O Clinic usa esse
+acesso <strong>exclusivamente dentro da pasta de trabalho</strong> que o profissional
+indica, e sobre ela lê e grava:</p>
+<ul>
+  <li>nomes, tamanhos, datas e hashes MD5 dos arquivos de vídeo da produção;</li>
+  <li>a estrutura de pastas do fluxo de produção;</li>
+  <li>os links de compartilhamento que o próprio Clinic gera para revisão.</li>
+</ul>
+<p>O Clinic não lê o conteúdo de documentos, planilhas, fotos, e-mails, contatos ou
+qualquer outro material do Google, e não percorre o Drive fora dessa pasta.</p>
+
+<h3>Por que o escopo é o do Drive completo</h3>
+<p>O Clinic precisa enxergar arquivos que <em>não</em> foram criados por ele — material que
+o profissional colocou na pasta pela interface do Drive, ou que foi enviado por outra
+ferramenta. É assim que ele detecta uma peça que existe no Drive e não está registrada, e
+é assim que ele evita declarar perdido um arquivo que está lá. O escopo
+<code>drive.file</code>, que enxerga só o que o próprio aplicativo criou, não permite essa
+conferência e faria o sistema afirmar ausências falsas. O acesso é restringido no
+aplicativo, por configuração da pasta de trabalho.</p>
+
+<h2>3. Como esses dados são usados</h2>
+<p>Apenas para operar o fluxo editorial: registrar o que existe, conferir integridade por
+hash, evitar envio duplicado, mover a peça aprovada para a pasta de finais, gerar o link de
+revisão e avisar o profissional quando algo precisa de decisão.</p>
+<p>Os dados <strong>não</strong> são usados para publicidade, perfilamento, revenda,
+enriquecimento de base, nem para treinar modelos de inteligência artificial — nem por nós,
+nem por terceiros.</p>
+
+<h2>4. Onde os dados ficam</h2>
+<ul>
+  <li><strong>Os arquivos de vídeo</strong> ficam no Google Drive do profissional e no
+  computador de trabalho de quem edita. O Clinic não hospeda mídia em servidor próprio.</li>
+  <li><strong>Os metadados</strong> (nome do arquivo, tamanho, hash, caminho no Drive,
+  link de compartilhamento, estado da peça) ficam num banco SQLite privado, em dois
+  lugares: o computador de trabalho e um servidor privado (VPS) usado só por esta
+  operação, com acesso restrito por chave SSH.</li>
+  <li><strong>As credenciais de autorização</strong> (token OAuth) ficam apenas no
+  computador de trabalho, em arquivo com permissão restrita ao usuário do sistema
+  operacional. Não são enviadas ao servidor, não entram em repositório de código e não
+  aparecem em registro de execução.</li>
+</ul>
+
+<h2>5. Com quem os dados são compartilhados</h2>
+<p>O Clinic não vende, aluga nem cede dados. O compartilhamento se limita a:</p>
+<ul>
+  <li><strong>Google</strong> — a própria API do Drive, que é a origem e o destino dos
+  arquivos.</li>
+  <li><strong>Telegram</strong> — os avisos operacionais são enviados ao profissional por
+  um bot privado do Telegram, na conversa dele. Esses avisos podem conter o nome da peça e
+  o link de revisão no Drive. Cada profissional recebe apenas o que é dele.</li>
+</ul>
+<p>Nenhum outro serviço de terceiro recebe dados do Google obtidos pelo Clinic.</p>
+
+<h2>6. Por quanto tempo</h2>
+<p>Os metadados são mantidos enquanto o profissional faz parte da operação, porque é o
+histórico que permite dizer o que já foi produzido e entregue. Encerrada a participação,
+ou a pedido, os metadados dele são removidos do banco e o acesso é revogado.</p>
+
+<h2>7. Como revogar o acesso</h2>
+<p>A qualquer momento, sem depender de nós, em
+<a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>:
+selecione <em>Clinic</em> e remova o acesso. A revogação vale só para a conta que a fez —
+cada profissional autoriza e revoga a própria conta, de forma independente das demais.</p>
+<p>Também é possível pedir a remoção escrevendo para
+<a href="mailto:drigortakakazu@gmail.com">drigortakakazu@gmail.com</a>. Respondemos em até
+30 dias.</p>
+
+<h2>8. Uso limitado dos dados do Google</h2>
+<p>O uso que o Clinic faz das informações recebidas das APIs do Google adere à
+<a href="https://developers.google.com/terms/api-services-user-data-policy">Política de
+dados do usuário dos serviços de API do Google</a>, incluindo os requisitos de Uso
+Limitado.</p>
+
+<h2>9. Segurança</h2>
+<p>Acesso ao servidor por chave SSH, sem senha e sem porta aberta para a internet além
+dela. Segredos ficam fora do repositório de código, em arquivo de permissão restrita.
+Nenhum segredo é escrito em registro de execução. Os vídeos trafegam por HTTPS entre o
+computador de trabalho e o Google.</p>
+
+<h2>10. Mudanças nesta política</h2>
+<p>Alterações relevantes são publicadas nesta página com nova data de vigência e
+comunicadas aos profissionais pelo canal de avisos.</p>
+
+<footer>
+  <a href="/">Início</a>
+  <a href="/privacidade.html">Privacidade</a>
+  <a href="/termos.html">Termos</a>
+  <p class="nota" style="margin-top:.75rem">Atualizado em 17 de setembro de 2026.</p>
+</footer>
+
+</div>
+</body>
+</html>
