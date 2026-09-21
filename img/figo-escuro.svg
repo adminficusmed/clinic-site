@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1 -6.5 200 200" width="200" height="200" role="img" aria-label="FicusMed">
+  <path d="M100,32 C100,18 101,12 105,4" fill="none" stroke="#C6A560" stroke-width="7" stroke-linecap="round"></path>
+  <path d="M105,17 C119,1 143,1 154,9 C143,27 119,31 105,20 Z" fill="#C6A560"></path>
+  <path d="M100,36 C134,66 152,94 152,126 C152,159 128,186 100,186 C72,186 48,159 48,126 C48,94 66,66 100,36 Z" fill="#F4EFE4"></path>
+  <path d="M76,128 L93,146 L129,105" fill="none" stroke="#1E3D2C" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
