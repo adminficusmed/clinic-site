@@ -2,204 +2,92 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Clinic · sistema editorial da FicusMed</title>
-<meta name="description" content="Clinic é o sistema interno da FicusMed que organiza, confere e entrega as peças de vídeo educacional dos profissionais de saúde que produzem conteúdo com a operação.">
-<meta name="theme-color" content="#FBF8F1" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#12241A" media="(prefers-color-scheme: dark)">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ficus Clinic</title>
+<meta name="description" content="Ficus Clinic. TAKAKAZU SERVICOS MEDICOS LTDA, CNPJ 59.926.926/0001-55.">
+<meta name="theme-color" content="#12241A">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ficus Clinic">
+<meta property="og:url" content="https://clinic.ficusmed.com/">
+<meta property="og:image" content="https://clinic.ficusmed.com/img/ficus-clinic-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="O figo da Ficus Clinic em relevo, sobre fundo verde figueira">
 <link rel="icon" href="/img/figo.svg" type="image/svg+xml">
 <link rel="preload" href="/fontes/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fontes/libre-franklin-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/estilo.css">
+<script>document.documentElement.className+=' js'</script>
+<link rel="stylesheet" href="/inicio.css?v=1">
+<script src="/inicio.js?v=1" defer></script>
 </head>
 <body>
-<a class="pula" href="#conteudo">Ir para o conteúdo</a>
-<header class="topo">
-  <div class="dentro">
-    <a class="lockup" href="/" aria-label="Clinic, sistema editorial da FicusMed. Página inicial">
-      <picture>
-        <source srcset="/img/ficusmed-horizontal-dark.svg" media="(prefers-color-scheme: dark)">
-        <img src="/img/ficusmed-horizontal-light.svg" alt="FicusMed" width="103" height="30">
-      </picture>
-      <span class="produto">Clinic</span>
-    </a>
-    <nav class="menu" aria-label="Principal">
-      <a class="ancora" href="/#como-funciona">Como funciona</a>
-      <a class="ancora" href="/#google-drive">Google Drive</a>
-      <a href="/privacidade.html">Privacidade</a>
-      <a href="/termos.html">Termos</a>
-    </nav>
-  </div>
-</header>
+<canvas class="relevo" aria-hidden="true"></canvas>
 
-<main id="conteudo">
+<main class="palco">
+  <!-- O figo construído, estado COMPLETO, em marfim quatro luzes com o ouro assentado
+       no ápice: as células são as da capa oficial FIG. 17 (capa-02-figueira) da FicusMed,
+       sem mudança. É o desenho que aparece sem JavaScript, e é daqui que o inicio.js lê
+       a geometria do relevo: a matriz existe num lugar só. -->
+  <svg class="figo" viewBox="42 30 116 160" aria-hidden="true" focusable="false">
+    <path class="guia" d="M100,36 C134,66 152,94 152,126 C152,159 128,186 100,186 C72,186 48,159 48,126 C48,94 66,66 100,36 Z"/>
+    <rect x="94.5" y="173" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.70)"/>
+    <rect x="67.3" y="159.4" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.45)"/>
+    <rect x="80.9" y="159.4" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.70)"/>
+    <rect x="94.5" y="159.4" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.92)"/>
+    <rect x="108.1" y="159.4" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.70)"/>
+    <rect x="121.7" y="159.4" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.45)"/>
+    <rect x="67.3" y="145.8" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.45)"/>
+    <rect x="80.9" y="145.8" width="11" height="11" rx="2.75" fill="rgba(244,239,228,0.85)"/>
+    <rect x="94.5" y="145.8" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.92)"/>
+    <rect x="108.1" y="145.8" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.70)"/>
+    <rect x="121.7" y="145.8" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.45)"/>
+    <rect x="53.7" y="132.2" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.45)"/>
+    <rect x="67.3" y="132.2" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.70)"/>
+    <rect x="80.9" y="132.2" width="11" height="11" rx="2.75" fill="rgba(244,239,228,0.85)"/>
+    <rect x="94.5" y="132.2" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.92)"/>
+    <rect x="108.1" y="132.2" width="11" height="11" rx="2.75" fill="rgba(244,239,228,0.85)"/>
+    <rect x="121.7" y="132.2" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.70)"/>
+    <rect x="135.3" y="132.2" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.45)"/>
+    <rect x="53.7" y="118.6" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.45)"/>
+    <rect x="67.3" y="118.6" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.70)"/>
+    <rect x="80.9" y="118.6" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.92)"/>
+    <rect x="94.5" y="118.6" width="11" height="11" rx="2.75" fill="rgba(244,239,228,0.85)"/>
+    <rect x="108.1" y="118.6" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.92)"/>
+    <rect x="121.7" y="118.6" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.70)"/>
+    <rect x="135.3" y="118.6" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.45)"/>
+    <rect x="53.7" y="105" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.45)"/>
+    <rect x="67.3" y="105" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.45)"/>
+    <rect x="80.9" y="105" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.70)"/>
+    <rect x="94.5" y="105" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.92)"/>
+    <rect x="108.1" y="105" width="11" height="11" rx="2.75" fill="rgba(244,239,228,0.85)"/>
+    <rect x="121.7" y="105" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.70)"/>
+    <rect x="135.3" y="105" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.45)"/>
+    <rect x="67.3" y="91.4" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.45)"/>
+    <rect x="80.9" y="91.4" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.70)"/>
+    <rect x="94.5" y="91.4" width="11" height="11" rx="2.75" fill="rgba(244,239,228,0.85)"/>
+    <rect x="108.1" y="91.4" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.70)"/>
+    <rect x="121.7" y="91.4" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.45)"/>
+    <rect x="67.3" y="77.8" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.45)"/>
+    <rect x="80.9" y="77.8" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.70)"/>
+    <rect x="94.5" y="77.8" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.92)"/>
+    <rect x="108.1" y="77.8" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.70)"/>
+    <rect x="80.9" y="64.2" width="11" height="11" rx="2.75" fill="rgba(251,248,241,0.70)"/>
+    <rect x="94.5" y="64.2" width="11" height="11" rx="2.75" fill="rgba(244,239,228,0.85)"/>
+    <rect class="ouro" x="94.5" y="50.6" width="11" height="11" rx="2.75" fill="#C6A560"/>
+  </svg>
 
-<section class="abertura">
-  <div class="dentro">
-    <div>
-      <p class="kicker reveal">Sistema editorial · uso interno</p>
-      <h1 class="reveal r2">Clinic</h1>
-      <p class="lede reveal r3">Do roteiro à versão final, cada peça de vídeo no lugar certo,
-      conferida e com dono.</p>
-      <p class="texto reveal r4">O Clinic organiza a produção de conteúdo educacional em vídeo
-      de um grupo pequeno e definido de profissionais de saúde. Ele registra o que existe,
-      confere se o arquivo entregue é o mesmo que foi aprovado, leva a peça para a pasta
-      certa no Google Drive do profissional e avisa quando alguma coisa precisa de decisão
-      humana.</p>
-      <ul class="selos reveal r4" aria-label="Como é o acesso">
-        <li>Acesso por convite</li>
-        <li>Sem cadastro público</li>
-        <li>Operado pela FicusMed</li>
-      </ul>
-      <div class="acoes reveal r5">
-        <a class="botao" href="#google-drive">O que ele faz com o Drive <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        <a class="botao contorno" href="/privacidade.html">Política de Privacidade</a>
-      </div>
-    </div>
-    <div class="palco" aria-hidden="false">
-      <svg class="figo-construcao" viewBox="40 30 204 162" role="img" aria-label="O figo da FicusMed em construção, bloco a bloco"><path class="guia" d="M100,36 C134,66 152,94 152,126 C152,159 128,186 100,186 C72,186 48,159 48,126 C48,94 66,66 100,36 Z"/><rect class="cel c2" x="94.5" y="173" width="11" height="11" rx="2.75" style="--d:0.120s"/><rect class="cel c1" x="67.3" y="159.4" width="11" height="11" rx="2.75" style="--d:0.195s"/><rect class="cel c2" x="80.9" y="159.4" width="11" height="11" rx="2.75" style="--d:0.213s"/><rect class="cel c1" x="94.5" y="159.4" width="11" height="11" rx="2.75" style="--d:0.231s"/><rect class="cel c2" x="108.1" y="159.4" width="11" height="11" rx="2.75" style="--d:0.249s"/><rect class="cel c1" x="121.7" y="159.4" width="11" height="11" rx="2.75" style="--d:0.267s"/><rect class="cel c2" x="67.3" y="145.8" width="11" height="11" rx="2.75" style="--d:0.270s"/><rect class="cel c3" x="80.9" y="145.8" width="11" height="11" rx="2.75" style="--d:0.288s"/><rect class="cel c2" x="94.5" y="145.8" width="11" height="11" rx="2.75" style="--d:0.306s"/><rect class="cel c1" x="108.1" y="145.8" width="11" height="11" rx="2.75" style="--d:0.324s"/><rect class="cel c2" x="121.7" y="145.8" width="11" height="11" rx="2.75" style="--d:0.342s"/><rect class="cel c1" x="53.7" y="132.2" width="11" height="11" rx="2.75" style="--d:0.345s"/><rect class="cel c2" x="67.3" y="132.2" width="11" height="11" rx="2.75" style="--d:0.363s"/><rect class="cel c1" x="80.9" y="132.2" width="11" height="11" rx="2.75" style="--d:0.381s"/><rect class="cel c2" x="94.5" y="132.2" width="11" height="11" rx="2.75" style="--d:0.399s"/><rect class="cel c1" x="108.1" y="132.2" width="11" height="11" rx="2.75" style="--d:0.417s"/><rect class="cel c3" x="121.7" y="132.2" width="11" height="11" rx="2.75" style="--d:0.435s"/><rect class="cel c1" x="135.3" y="132.2" width="11" height="11" rx="2.75" style="--d:0.453s"/><rect class="cel c2" x="53.7" y="118.6" width="11" height="11" rx="2.75" style="--d:0.420s"/><rect class="cel c1" x="67.3" y="118.6" width="11" height="11" rx="2.75" style="--d:0.438s"/><rect class="cel c3" x="80.9" y="118.6" width="11" height="11" rx="2.75" style="--d:0.456s"/><rect class="cel c1" x="94.5" y="118.6" width="11" height="11" rx="2.75" style="--d:0.474s"/><rect class="cel c2" x="108.1" y="118.6" width="11" height="11" rx="2.75" style="--d:0.492s"/><rect class="cel c1" x="121.7" y="118.6" width="11" height="11" rx="2.75" style="--d:0.510s"/><rect class="cel c2" x="135.3" y="118.6" width="11" height="11" rx="2.75" style="--d:0.528s"/><rect class="cel c1" x="53.7" y="105" width="11" height="11" rx="2.75" style="--d:0.495s"/><rect class="cel c2" x="67.3" y="105" width="11" height="11" rx="2.75" style="--d:0.513s"/><rect class="cel c1" x="80.9" y="105" width="11" height="11" rx="2.75" style="--d:0.531s"/><rect class="cel c2" x="94.5" y="105" width="11" height="11" rx="2.75" style="--d:0.549s"/><rect class="cel c3" x="108.1" y="105" width="11" height="11" rx="2.75" style="--d:0.567s"/><rect class="cel c2" x="121.7" y="105" width="11" height="11" rx="2.75" style="--d:0.585s"/><rect class="cel c1" x="135.3" y="105" width="11" height="11" rx="2.75" style="--d:0.603s"/><rect class="vaga" x="67.3" y="91.4" width="11" height="11" rx="2.75" style="--d:0.570s"/><rect class="cel c1" x="80.9" y="91.4" width="11" height="11" rx="2.75" style="--d:0.588s"/><rect class="cel c2" x="94.5" y="91.4" width="11" height="11" rx="2.75" style="--d:0.606s"/><rect class="cel c1" x="108.1" y="91.4" width="11" height="11" rx="2.75" style="--d:0.624s"/><rect class="vaga" x="121.7" y="91.4" width="11" height="11" rx="2.75" style="--d:0.642s"/><rect class="vaga" x="80.9" y="77.8" width="11" height="11" rx="2.75" style="--d:0.645s"/><rect class="cel c2" x="94.5" y="77.8" width="11" height="11" rx="2.75" style="--d:0.663s"/><rect class="cel c1" x="108.1" y="77.8" width="11" height="11" rx="2.75" style="--d:0.681s"/><rect class="vaga futura" x="121.7" y="77.8" width="11" height="11" rx="2.75" style="--d:0.699s"/><rect class="cel c2" x="94.5" y="64.2" width="11" height="11" rx="2.75" style="--d:0.720s"/><rect class="vaga futura" x="108.1" y="64.2" width="11" height="11" rx="2.75" style="--d:0.738s"/><rect class="vaga futura" x="94.5" y="50.6" width="11" height="11" rx="2.75" style="--d:0.795s"/><rect class="solto verde" x="59" y="60" width="11" height="11" rx="2.75"/><rect class="solto ouro" x="137.5" y="52.5" width="11" height="11" rx="2.75"/><path class="lider" d="M153 58 H182"/><text class="anotacao" x="186" y="59.8">EM CONSTRUÇÃO</text></svg>
-      <span class="fig" aria-hidden="true">FIG. 01</span>
-    </div>
-  </div>
-</section>
-
-<section class="secao" id="como-funciona" aria-labelledby="t-como">
-  <div class="dentro">
-    <p class="kicker">O fluxo</p>
-    <h2 id="t-como">Quatro etapas, e nenhuma em silêncio</h2>
-    <p class="intro">Não é um produto aberto ao público. É a ferramenta de trabalho de quem
-    produz com a operação, e cada etapa deixa registro.</p>
-    <ol class="etapas">
-      <li><span class="modulo" aria-hidden="true"></span><span class="num">01</span>
-        <h3>Registra</h3>
-        <p>Cada peça ganha registro desde o roteiro. O sistema sabe o que existe, em que etapa
-        está e de quem é.</p></li>
-      <li><span class="modulo" aria-hidden="true"></span><span class="num">02</span>
-        <h3>Confere</h3>
-        <p>O arquivo entregue é comparado, pelo hash, com o arquivo aprovado. Se não bate,
-        não segue.</p></li>
-      <li><span class="modulo" aria-hidden="true"></span><span class="num">03</span>
-        <h3>Entrega</h3>
-        <p>A peça aprovada vai para a pasta de finais no Drive do profissional, e a cópia de
-        revisão é recolhida.</p></li>
-      <li><span class="modulo" aria-hidden="true"></span><span class="num">04</span>
-        <h3>Avisa</h3>
-        <p>Quando algo precisa de decisão humana, o profissional recebe o aviso na conversa
-        privada dele.</p></li>
-    </ol>
-  </div>
-</section>
-
-<section class="secao faixa" id="google-drive" aria-labelledby="t-drive">
-  <div class="dentro">
-    <p class="kicker">Google Drive</p>
-    <h2 id="t-drive">O que o Clinic faz com o seu Drive</h2>
-    <p class="intro">O Drive é onde o material fica. O Clinic usa a autorização concedida por
-    cada profissional apenas dentro da pasta de trabalho indicada por ele.</p>
-    <div class="colunas">
-      <div class="cartao-escuro">
-        <h3>Dentro da pasta de trabalho</h3>
-        <ul class="lista">
-          <li>Cria as pastas do fluxo de produção.</li>
-          <li>Lista o que já está lá, para não subir duas vezes o mesmo arquivo.</li>
-          <li>Envia o vídeo finalizado e confere, pelo hash, que ele chegou íntegro.</li>
-          <li>Move a peça de "em edição" para "finais" quando ela é aprovada.</li>
-          <li>Gera o link de compartilhamento usado na revisão.</li>
-          <li>Recolhe a cópia de revisão depois que a versão final está confirmada no lugar.</li>
-        </ul>
-      </div>
-      <div class="cartao-escuro">
-        <h3>O que ele nunca faz</h3>
-        <ul class="lista nao">
-          <li>Mexer em material fora da pasta de trabalho.</li>
-          <li>Apagar a versão final de uma peça.</li>
-          <li>Compartilhar arquivo com quem o profissional não autorizou.</li>
-          <li>Ler documentos, planilhas, fotos, e-mails ou contatos.</li>
-          <li>Usar dados para publicidade, perfilamento ou treino de inteligência artificial.</li>
-        </ul>
-      </div>
-    </div>
-    <p class="nota">O acesso pode ser revogado a qualquer momento, sem depender de nós, em
-    <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
-  </div>
-</section>
-
-<section class="secao" id="documentos" aria-labelledby="t-docs">
-  <div class="dentro">
-    <p class="kicker">Documentos</p>
-    <h2 id="t-docs">As regras, por escrito</h2>
-    <p class="intro">O que o Clinic acessa, onde os dados ficam, com quem são compartilhados e
-    como encerrar o uso.</p>
-    <div class="docs">
-      <a class="doc" href="/privacidade.html">
-        <span class="fig">DOC. 01</span>
-        <h3>Política de Privacidade</h3>
-        <p>Quais dados do Google o Clinic acessa, para quê, onde ficam, por quanto tempo e
-        como revogar.</p>
-        <span class="ir">Ler a política</span>
-      </a>
-      <a class="doc" href="/termos.html">
-        <span class="fig">DOC. 02</span>
-        <h3>Termos de Serviço</h3>
-        <p>Quem pode usar, o que o profissional autoriza, de quem é o conteúdo e como o uso
-        termina.</p>
-        <span class="ir">Ler os termos</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="secao" id="contato" aria-labelledby="t-contato">
-  <div class="dentro">
-    <p class="kicker">Quem responde</p>
-    <h2 id="t-contato">A empresa por trás do Clinic</h2>
-    <p class="intro">Dúvidas, pedido de remoção de dados ou revogação de acesso: escreva para
-    <a href="mailto:contato@ficusmed.com">contato@ficusmed.com</a>. Respondemos em até 30 dias.</p>
-    <div class="empresa">
-      <dl>
-        <div class="linha"><dt>Razão social</dt><dd class="razao">TAKAKAZU SERVICOS MEDICOS LTDA</dd></div>
-        <div class="linha"><dt>CNPJ</dt><dd>59.926.926/0001-55</dd></div>
-        <div class="linha"><dt>Endereço</dt><dd>Rua Arnaldo Serra, 92, Quadra 6 Lote 8, Vila Carvalho, Campo Grande, MS, CEP 79005-110</dd></div>
-        <div class="linha"><dt>Operação</dt><dd>FicusMed</dd></div>
-        <div class="linha"><dt>Contato</dt><dd><a href="mailto:contato@ficusmed.com">contato@ficusmed.com</a></dd></div>
-      </dl>
-    </div>
-  </div>
-</section>
-
+  <!-- O lockup é o da FicusMed com o descritor trocado, como na agenda: símbolo
+       114, vão 20, texto 72, "Ficus" em Archivo 800 e o descritor em Archivo 400
+       ouro. O símbolo é byte a byte o symbol-on-dark.svg do kit. -->
+  <h1 class="lockup">
+    <svg class="simbolo" viewBox="1 -6.5 200 200" aria-hidden="true" focusable="false"><path d="M100,32 C100,18 101,12 105,4" fill="none" stroke="#C6A560" stroke-width="7" stroke-linecap="round"/><path d="M105,17 C119,1 143,1 154,9 C143,27 119,31 105,20 Z" fill="#C6A560"/><path d="M100,36 C134,66 152,94 152,126 C152,159 128,186 100,186 C72,186 48,159 48,126 C48,94 66,66 100,36 Z" fill="#F4EFE4"/><path d="M76,128 L93,146 L129,105" fill="none" stroke="#1E3D2C" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="nome"><b>Ficus</b><span class="vao"> </span><span class="descritor">Clinic</span></span>
+  </h1>
 </main>
-<footer class="rodape faixa">
-  <div class="dentro">
-    <div class="grade">
-      <div>
-        <div class="marca-rodape"><img src="/img/figo-escuro.svg" alt="" width="34" height="34"><span>Clinic</span></div>
-        <p>Sistema editorial de uso interno da FicusMed. Organiza, confere e entrega as peças
-        de vídeo dos profissionais que produzem conteúdo com a operação.</p>
-      </div>
-      <nav aria-labelledby="rodape-paginas">
-        <h2 id="rodape-paginas">Páginas</h2>
-        <ul>
-          <li><a href="/">Início</a></li>
-          <li><a href="/privacidade.html">Política de Privacidade</a></li>
-          <li><a href="/termos.html">Termos de Serviço</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h2>Empresa</h2>
-        <address>
-          <strong>TAKAKAZU SERVICOS MEDICOS LTDA</strong>
-          CNPJ 59.926.926/0001-55<br>
-          Rua Arnaldo Serra, 92, Quadra 6 Lote 8<br>
-          Vila Carvalho, Campo Grande, MS, CEP 79005-110<br>
-          <a href="mailto:contato@ficusmed.com">contato@ficusmed.com</a>
-        </address>
-      </div>
-    </div>
-    <div class="base">
-      <span>© 2026 TAKAKAZU SERVICOS MEDICOS LTDA</span>
-      <span>Atualizado em 21 de setembro de 2026</span>
-    </div>
-  </div>
+
+<footer class="rodape">
+  <p class="empresa"><span>TAKAKAZU SERVICOS MEDICOS LTDA</span> <span>CNPJ 59.926.926/0001-55</span></p>
+  <p class="contato"><a href="mailto:contato@ficusmed.com">contato@ficusmed.com</a> <a href="/privacidade.html">Privacidade</a> <a href="/termos.html">Termos</a></p>
 </footer>
 </body>
 </html>
