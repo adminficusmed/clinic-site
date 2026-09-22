@@ -1,78 +1,51 @@
 # clinic.ficusmed.com
 
-Site público da **Ficus Clinic**. Existe também por um motivo de infraestrutura: o Google
-exige página inicial, política de privacidade e termos públicos, num domínio autorizado e
-verificado, para que o app OAuth do Clinic fique publicado. E é o status "Testando" que faz o
-token de atualização do Google Drive expirar a cada 7 dias.
-
-Estático, sem build e sem dependência. Publicado por GitHub Pages no domínio
-`clinic.ficusmed.com`.
+Site público da **Ficus Clinic**: a página inicial, a política de privacidade e os termos de
+serviço. Estático, sem build e sem dependência, publicado por GitHub Pages.
 
 - `index.html`: a inicial. Só a marca: o figo em relevo, o lockup Ficus Clinic e, no rodapé,
-  razão social, CNPJ, contato e os links da política e dos termos
+  a identificação da empresa, o contato e os links dos dois documentos
 - `inicio.css`, `inicio.js`: o visual e o relevo da inicial, que não servem a mais nada
-- `privacidade.html`: política de privacidade (obrigatória para a publicação no Google)
-- `termos.html`: termos de serviço
-- `estilo.css`: o visual das duas páginas de documento
-- `fontes/`, `img/`: fontes e logos copiados do kit da FicusMed, sem alteração, e a imagem
-  de compartilhamento `img/ficus-clinic-og.jpg`, gerada da própria inicial
+- `privacidade.html`, `termos.html`: os documentos, com o próprio `estilo.css`
+- `fontes/`, `img/`: fontes e logos da FicusMed, sem alteração, e a imagem de
+  compartilhamento, gerada da própria inicial
 - `CNAME`: domínio personalizado do GitHub Pages
 
-**Os três caminhos não mudam.** A tela de consentimento do Google aponta para `/`,
-`/privacidade.html` e `/termos.html`; trocar um nome de arquivo derruba o link dela. E **o
-link da política fica no rodapé da inicial**: o Google pede que a página inicial de um app
-publicado leve à política de privacidade.
+## O que não muda
 
-**Se um dia o app for verificado pelo Google, a inicial precisa mudar.** Desde 22/09/2026 ela
-não explica nada, por decisão do fundador, e mostra "Ficus Clinic". A verificação pede que a
-inicial descreva o que o app faz com os dados e use o mesmo nome da tela de consentimento
-("Clinic"). Hoje o app está publicado sem verificação, que não é exigida nem recomendada
-(`infra/CONTAS-GOOGLE.md` §7, no workspace), e nada disso vale.
+**Os três caminhos**: `/`, `/privacidade.html` e `/termos.html`. Outros serviços apontam
+para eles pelo endereço exato, e renomear um arquivo quebra esses links. O link da política
+fica no rodapé da inicial.
 
-O conteúdo da política e dos termos descreve o comportamento real do sistema. Se o Clinic
-mudar o que faz com o Drive (outro escopo, outro destino, outro terceiro recebendo dado),
-**a política muda junto**, senão ela vira mentira publicada.
+**O conteúdo dos documentos descreve o sistema como ele funciona.** Se o comportamento
+mudar, o texto muda junto, com nova data de vigência: documento que descreve o que não
+acontece mais é documento falso.
 
 ## A inicial
 
 Uma parede figueira e, sobre ela, o figo construído em relevo, como peças de porcelana
-marfim; o cursor é a lâmpada. A luz acende o bisel das peças, projeta a sombra delas na
-parede e inclina de leve o ponto de vista. Ao abrir, as peças sobem da base ao ápice e o
-módulo de ouro chega por último, solto e girado, e assenta no ápice. No celular, o dedo
-arrasta a luz e, parada, ela passeia devagar.
+marfim; o cursor é a lâmpada. Ao abrir, as peças sobem da base ao ápice e o módulo de ouro
+chega por último e assenta. No celular, o dedo arrasta a luz.
 
-- **A geometria mora uma vez só**, no `<svg class="figo">` do `index.html`: as células são
-  as da capa oficial FIG. 17 (`capa-02-figueira`) da FicusMed, sem mudança. O `inicio.js`
-  lê de lá as células e o tom de cada uma, e tira a posição e a escala da caixa que o CSS
-  deu ao SVG. Mexer na composição é mexer no CSS.
-- **Sem WebGL, sem JavaScript ou com erro**, esse SVG fica no lugar: o figo completo em
-  marfim quatro luzes, como na capa oficial. Com `prefers-reduced-motion`, não há chegada,
-  inclinação nem passeio; a luz ainda responde ao cursor.
-- **Custo:** o shader desenha até ~3,5 milhões de pixels (um monitor 5K não precisa de
-  14 milhões para uma parede), só calcula relevo e sombra na região do figo, e a qualidade
-  desce sozinha se o quadro ficar lento. Parado, não desenha. Medido num Apple M4: 60 quadros
-  por segundo com o cursor em movimento, a 2366×1479.
-- **O lockup** é o da FicusMed com o descritor trocado, como na agenda: símbolo 114, vão 20,
-  texto 72, "Ficus" em Archivo 800 e "Clinic" em Archivo 400 ouro. Conferido sobrepondo-o
-  ao `horizontal-dark.svg` oficial: o símbolo cai no mesmo pixel.
-- **Cache:** o GitHub Pages serve com `max-age=600`, e o navegador guarda. Mudou o
-  `inicio.css` ou o `inicio.js`, suba o `?v=` deles no `index.html`.
-- **Um ouro só**, o módulo do ápice, além do próprio logo. Paleta, fontes e matriz são as do
-  guia de design da FicusMed (`marca/design-guide.md` no workspace dela).
-
-## As páginas de documento
-
-Seguem o mesmo guia: paleta oficial (marfim, figueira, verdes, esmeralda), Archivo nos
-títulos, Libre Franklin no corpo, IBM Plex Mono nas microetiquetas, grade-guia de 90px e a
-faixa escura na família topográfica. Tema claro e escuro.
+- **A geometria mora uma vez só**, no `<svg class="figo">` do `index.html`, que é a capa
+  oficial FIG. 17 da FicusMed sem mudança. O `inicio.js` lê de lá as células e o tom de cada
+  uma, e tira a posição e a escala da caixa que o CSS deu ao SVG. Mexer na composição é mexer
+  no CSS.
+- **Sem WebGL, sem JavaScript ou com erro**, esse SVG fica no lugar. Com
+  `prefers-reduced-motion`, não há chegada nem movimento automático.
+- **Custo:** o shader desenha até cerca de 3,5 milhões de pixels, só calcula relevo e sombra
+  na região do figo, e a qualidade desce sozinha se o quadro ficar lento. Parado, não
+  desenha.
+- **Cache:** o navegador guarda os arquivos por alguns minutos. Mudou o `inicio.css` ou o
+  `inicio.js`, suba o `?v=` deles no `index.html`.
+- **Um ouro só**, o módulo do ápice, além do próprio logo. Paleta, tipografia e matriz são as
+  do guia de design da FicusMed.
 
 As fontes são variáveis: um arquivo cobre todos os pesos, e por isso cada `@font-face`
 declara faixa (`font-weight: 100 900`), nunca um peso fixo.
 
-## Contato e empresa
+## Contato
 
-`contato@ficusmed.com`, que chega à caixa da FicusMed pelo roteamento de e-mail da
-Cloudflare. A empresa é a TAKAKAZU SERVICOS MEDICOS LTDA, CNPJ 59.926.926/0001-55; os
-dados são os do cartão CNPJ na Receita.
+`contato@ficusmed.com`. TAKAKAZU SERVICOS MEDICOS LTDA, CNPJ 59.926.926/0001-55.
 
-Texto sem travessão, por decisão de 21/09/2026.
+Texto público sem travessão.
